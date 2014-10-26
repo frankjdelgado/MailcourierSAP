@@ -26,14 +26,10 @@
 	<title>Mailcourier</title>
 </head>
 <body>
-	<header ng-include="'templates/nav.html'" scope="" onload=""></header>
-
+	<header ng-include="'templates/shared/nav.html'" scope="" onload=""></header>
+		
 	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam corrupti nam minus, sequi obcaecati adipisci eos nobis earum quaerat illum delectus numquam temporibus, porro aspernatur, distinctio non sint at voluptatum?</p>
-			</div>
-		</div>
+		<div ui-view></div>
 	</div>
 
 </body>
