@@ -23,14 +23,20 @@
     <![endif]-->
 
 	<script src="scripts/app.js"></script>
+	<!-- Controllers -->
+	<script src="scripts/controller/homeCtrl.js"></script>
+
 	<title>Mailcourier</title>
 </head>
 <body>
+	<!-- Render Header -->
 	<header ng-include="'templates/shared/nav.html'" scope="" onload=""></header>
 		
 	<div class="container">
+		<!-- Display templates -->
 		<div ui-view></div>
 	</div>
+
 
 </body>
 </html>
