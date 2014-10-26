@@ -1,0 +1,27 @@
+{
+  "name": "Mailcourier SAP",
+  "version": "0.1",
+  "homepage": "https://github.com/frankjdelgado/MailcourierSAP",
+  "authors": [
+    "Francisco Delgado <fdelgado@4geeks.com.ve>"
+  ],
+  "description": "Mailcourier Single page application with angular",
+  "keywords": [
+    "angular",
+    "sap",
+    "mailcourier"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.2.26",
+    "bootstrap-sass-official": "~3.2.0+2"
+  }
+}

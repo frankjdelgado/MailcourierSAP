@@ -1,4 +1,4 @@
 MailcourierSAP
 ==============
 
-Mailcourier single apage application made with angular
+Mailcourier single apage application using angular and MailcourierAPI
