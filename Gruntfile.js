@@ -18,6 +18,12 @@ module.exports = function(grunt) {
 				livereload: true,
 			},
 		},
+		templates: {
+			files: ['templates/*.html'],
+			options: {
+				livereload: true,
+			},
+		},
     },
     'http-server': {
         'dev': {
