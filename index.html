@@ -23,18 +23,20 @@
     <![endif]-->
 
 	<script src="scripts/app.js"></script>
+	<!-- Controllers -->
+	<script src="scripts/controller/homeCtrl.js"></script>
+
 	<title>Mailcourier</title>
 </head>
 <body>
-	<header ng-include="'templates/nav.html'" scope="" onload=""></header>
-
+	<!-- Render Header -->
+	<header ng-include="'templates/shared/nav.html'" scope="" onload=""></header>
+		
 	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam corrupti nam minus, sequi obcaecati adipisci eos nobis earum quaerat illum delectus numquam temporibus, porro aspernatur, distinctio non sint at voluptatum?</p>
-			</div>
-		</div>
+		<!-- Display templates -->
+		<div ui-view></div>
 	</div>
+
 
 </body>
 </html>
