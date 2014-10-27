@@ -1,0 +1,27 @@
+{
+  "name": "MailcourierSAP",
+  "version": "1.0.0",
+  "description": "single page app for a generic mailcourier website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/frankjdelgado/MailcourierSAP.git"
+  },
+  "keywords": [
+    "angular",
+    "bootstrap"
+  ],
+  "author": "Francisco Delgado",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/frankjdelgado/MailcourierSAP/issues"
+  },
+  "homepage": "https://github.com/frankjdelgado/MailcourierSAP",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-watch": "^0.6.1"
+  }
+}
