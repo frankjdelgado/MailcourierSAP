@@ -4,11 +4,59 @@
 			<h1>{{ title }}</h1>	
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis voluptas fugiat cupiditate id accusantium, minus eligendi consectetur consequuntur nulla cumque. Doloribus repudiandae saepe et sequi? Voluptates qui, ullam dolorem nihil!</p>
 		</div>
-		<div class="col-xs-12 col-md-6">
-			<h3 class="text-info">Calculator</h3>
+		<div class="col-xs-12 col-md-offset-1 col-md-4">
+			<h3 class="text-info text-center">Calculator</h3>
+			<br/>
+			<div class="form-group">
+				<div class="input-group">
+				  <div class="input-group-addon text-capitalize">Height</div>
+				  <input id="height" class="form-control" type="text" placeholder="centimeters">
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="input-group">
+				  <div class="input-group-addon text-capitalize">Width</div>
+				  <input id="width" class="form-control" type="text" placeholder="centimeters">
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="input-group">
+				  <div class="input-group-addon text-capitalize">Depth</div>
+				  <input id="depth" class="form-control" type="text" placeholder="centimeters">
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="input-group">
+				  <div class="input-group-addon text-capitalize">Weight</div>
+				  <input id="weight" class="form-control" type="text" placeholder="kilograms">
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="input-group">
+				  <div class="input-group-addon text-capitalize">Value</div>
+				  <input id="value" class="form-control" type="text" placeholder="BsF">
+				</div>
+			</div>
+			<div class="form-group text-right">
+				<label for="price">Total:</label>
+				<span name="price"><span id="price"></span> Bsf.</span>
+			</div>
+			<div class="form-group text-right">
+				<button type="button" class="btn btn-info text-capitalize" id="calc">calculate</button>
+			</div>
 		</div>
-		<div class="col-xs-12 col-md-6">
-			<h3 class="text-info">Rates</h3>
+		<div class="col-xs-12 col-md-offset-2 col-md-4">
+			<h3 class="text-info text-center">Rates</h3>
+			<div class="row">
+				<div class="col-xs-12 col-md-6">
+					<h3 class="text-center">Value</h3>
+					<p class="text-bold text-center">20.0</p>
+				</div>
+				<div class="col-xs-12 col-md-6">
+					<h3 class="text-center">Dimensions</h3>
+					<p class="text-bold text-center">20.0</p>
+				</div>
+			</div>
 		</div>
 	</div>
 
