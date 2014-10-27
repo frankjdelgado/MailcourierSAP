@@ -9,8 +9,5 @@ Mailcourier single apage application using angular and MailcourierAPI
 * npm install
 * bower install
 
-##Livereload
-* grunt watch
-
 ##Server
-* grunt http-server:dev
+* grunt server

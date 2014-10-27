@@ -28,6 +28,7 @@ module.exports = function(grunt) {
             autoIndex: true,
             // server default file extension
             ext: "html",
+            runInBackground: true,
         }
     }
   });
@@ -36,5 +37,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-http-server');
 // Task definition
-
+	grunt.registerTask('server', ['http-server:dev','watch']);
+	
 };
