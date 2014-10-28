@@ -1,8 +1,21 @@
 angular
 	.module('mcapp')
 	.controller('homeCtrl', ['$scope','$http', function($scope,$http){
+
+		// Title
 		$scope.title = "Welcome!";
 		
+		// Rates
+		var url = 'http://0.0.0.0:3000/api/v1/rate/active_rates';
+		$http.get(url)
+		.success(function(data){
+			$scope.rate_dimension = data.package;
+			$scope.rate_value = data.cost;
+		})
+		.error(function(data){
+		
+		});
+
 		// Calculator
 		$scope.calculate = function(){
 
@@ -24,4 +37,3 @@ angular
 			});
 		};
 	}]);
-	
