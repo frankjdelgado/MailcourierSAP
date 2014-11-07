@@ -25,13 +25,14 @@
 	<script src="scripts/app.js"></script>
 	<!-- Controllers -->
 	<script src="scripts/controller/homeCtrl.js"></script>
+	<script src="scripts/controller/sessionController.js"></script>
 	<script src="//localhost:35729/livereload.js"></script>
 	<title>Mailcourier</title>
 </head>
 <body>
 	<!-- Render Header -->
 	<header ng-include="'templates/shared/nav.html'" scope="" onload=""></header>
-		
+	<div ng-include="'templates/shared/logeo.html'"></div>
 	<div class="container">
 		<!-- Display templates -->
 		<div ui-view></div>
