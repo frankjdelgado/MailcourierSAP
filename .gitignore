@@ -2,6 +2,7 @@
 /node_modules
 .DS_Store
 Thumbs.db
-sap.sublime-workspace
 sap.sublime-project
+sap.sublime-workspace
+npm-debug.log
 
