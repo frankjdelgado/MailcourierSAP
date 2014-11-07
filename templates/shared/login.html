@@ -1,0 +1,8 @@
+<form ng-controller="sessionController">
+	<div ng-hide="logged">
+		Username: <input type="text" name="username" ng-model="username">
+		Password: <input type="password" name="password" ng-model="password">
+		<button ng-click="login()">probar el logeo</button>
+	</div>
+	<p ng-show="logged">{{"Auth token: "+token}}</p>
+</form>
