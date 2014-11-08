@@ -1,0 +1,32 @@
+@import "variables";
+
+#table-package{
+
+	thead{
+		background-color: $black;
+		th{
+			border-bottom: none;
+			color:#fff;
+			&:first-child{
+				border-top-left-radius: 4px;
+			}
+			&:last-child{
+				border-top-right-radius: 4px;
+			}
+		}
+	}
+}
+
+.title-separator{
+	margin-bottom: 30px;
+}
+
+#new_package{
+	input:focus, select:focus{
+		border:1px solid $green;
+	}
+}
+
+#search-form:focus{
+	border-color:$green;
+}
