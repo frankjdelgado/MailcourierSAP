@@ -3,16 +3,11 @@ angular
 	.controller("sessionCtrl",['$scope','$http','$location','localStorageService', function($scope,$http,$location,localStorageService){
 
 		var url = "http://0.0.0.0:3000/api/v1/session";
-		var guardado;
-
-		$scope.logged = false;
-		$scope.token = "";
 		
-
-		// User auth
+		// User auth. Get token, id, role and redirect to /packages
 		$scope.login = function(){
 			$http({
-				method: 'GET',
+				method: 'POST',
 				url: url,
 				headers:{
 					'username': $scope.username,
@@ -21,7 +16,12 @@ angular
 			})
 			.success(function(data,status,headers,config){
 				if(localStorageService.isSupported){
-					guardado = localStorageService.set('token', data.token);
+
+					localStorageService.set('token', data.token);
+					localStorageService.set('id', data.id);
+					localStorageService.set('role', data.role);
+					$location.path("/packages");
+					
 				}else{
 					alert("Your browser does not support localStorage");
 				}
@@ -31,11 +31,11 @@ angular
 			});
 		};
 
-		// User logout
+		// User logout. Destroy localStroage and redirect to home
 		$scope.logout = function() {
-
-			// Destroy token and redirect to home
-			// localStorageService.remove("token");
+			localStorageService.remove("token");
+			localStorageService.remove("id");
+			localStorageService.remove("role");
 			$location.path("/");
 		};
 

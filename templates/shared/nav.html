@@ -13,65 +13,64 @@
           </div>
 
           <div class="collapse navbar-collapse" id="menu">
-            <ul class="nav navbar-nav navbar-right">     
-              <!-- user_signed_in? -->
-                <!-- current_user.is_admin? -->
-                <li>
-                  <a id="rates" role="button" data-toggle="dropdown" data-target="#" href="" class="text-black text-capitalize">Rates</a>
-                  <ul class="dropdown-menu" role="menu" aria-labelledby="rates">
-                    <li class="text-capitalize">
-                      <a href="" class="text-capitalize">Rates List</a>
-                    </li>
-                    <li class="text-capitalize">
-                      <a href="" class="text-capitalize">Create Rates</a>
-                    </li>
-                  </ul>
-                </li>
+            <ul class="nav navbar-nav navbar-right" ng-if="userIsLogged()">     
+              <!-- current_user.is_admin? -->
+              <li>
+                <a id="rates" role="button" data-toggle="dropdown" data-target="#" href="" class="text-black text-capitalize">Rates</a>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="rates">
+                  <li class="text-capitalize">
+                    <a href="" class="text-capitalize">Rates List</a>
+                  </li>
+                  <li class="text-capitalize">
+                    <a href="" class="text-capitalize">Create Rates</a>
+                  </li>
+                </ul>
+              </li>
 
-                <li>
-                  <a id="Operator" role="button" data-toggle="dropdown" data-target="#" href="" class="text-black text-capitalize">Operators</a>
-                  <ul class="dropdown-menu" role="menu" aria-labelledby="Operator">
+              <li>
+                <a id="Operator" role="button" data-toggle="dropdown" data-target="#" href="" class="text-black text-capitalize">Operators</a>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="Operator">
+                  <li class="text-capitalize">
+                    <a href="" class="text-capitalize">Operators List</a>
+                  </li>
+                  <li class="text-capitalize">
+                    <a href="" class="text-capitalize">Add operator</a>
+                  </li>
+                </ul>
+              </li>
+              <!-- end current_user.is_admin?-->
+              <li>
+                <a id="Packages" role="button" data-toggle="dropdown" data-target="#" href="" class="text-black text-capitalize">Packages</a>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="Packages">
+                  <li class="text-capitalize">
+                    <a href="" class="text-capitalize">Package List</a>
+                  </li>
+                  <!-- !current_user.is_member? -->
                     <li class="text-capitalize">
-                      <a href="" class="text-capitalize">Operators List</a>
+                      <a href="" class="text-capitalize">New Package</a>
                     </li>
-                    <li class="text-capitalize">
-                      <a href="" class="text-capitalize">Add operator</a>
-                    </li>
-                  </ul>
-                </li>
-                <!-- end current_user.is_admin?-->
-                <li>
-                  <a id="Packages" role="button" data-toggle="dropdown" data-target="#" href="" class="text-black text-capitalize">Packages</a>
-                  <ul class="dropdown-menu" role="menu" aria-labelledby="Packages">
-                    <li class="text-capitalize">
-                      <a href="" class="text-capitalize">Package List</a>
-                    </li>
-                    <!-- !current_user.is_member? -->
-                      <li class="text-capitalize">
-                        <a href="" class="text-capitalize">New Package</a>
-                      </li>
-                    <!-- end !current_user.is_member? -->
-                  </ul>
-                </li>
-                <li>
-                  <a id="usernameLabel" role="button" data-toggle="dropdown" data-target="#" href="" class="text-black">username <span class="caret"></span></a>
-                  <ul class="dropdown-menu" role="menu" aria-labelledby="usernameLabel">
-                    <li class="text-capitalize">
-                      <a href="" class="text-capitalize">Profile</a>
-                    </li>
-                    <li class="text-capitalize">
-                      <a href="" class="text-capitalize">Logout</a>
-                    </li>
-                  </ul>
-                </li>
-              <!-- else user_signed_in?-->
-                <li class="text-uppercase">
-                  <a href="" ui-sref="login">login</a>
-                </li>
-                <li class="text-uppercase">
-                  <a  href="">sign up</a>
-                </li>
-              <!-- end user_signed_in?-->
+                  <!-- end !current_user.is_member? -->
+                </ul>
+              </li>
+              <li>
+                <a id="usernameLabel" role="button" data-toggle="dropdown" data-target="#" href="" class="text-black">username <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="usernameLabel">
+                  <li class="text-capitalize">
+                    <a href="" class="text-capitalize">Profile</a>
+                  </li>
+                  <li class="text-capitalize">
+                    <a href="" class="text-capitalize">Logout</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right" ng-if="!userIsLogged()"> 
+              <li class="text-uppercase">
+                <a href="" ui-sref="login">login</a>
+              </li>
+              <li class="text-uppercase">
+                <a  href="">sign up</a>
+              </li>
             </ul>
           </div>
         </nav>
