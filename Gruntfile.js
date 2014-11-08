@@ -20,7 +20,7 @@ module.exports = function(grunt) {
 			},
 		},
 		templates: {
-			files: ['templates/*.html','templates/shared/*.html'],
+			files: ['templates/*.html','templates/**/*.html'],
 			options: {
 				livereload: true,
 			},
