@@ -1,6 +1,6 @@
 angular
 	.module('mcapp')
-	.controller('packageCtrl', function($scope,$http,localStorageService){
+	.controller('packageCtrl', ['$scope','$http','localStorageService', function($scope,$http,localStorageService){
 		
 		var url = 'http://0.0.0.0:3000/api/v1/package';
 		var token;
@@ -27,4 +27,4 @@ angular
 				alert("Your browser does not support localStorage");
 			}
 		};
-	});
+	}]);
