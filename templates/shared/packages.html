@@ -1,0 +1,24 @@
+<div ng-controller="packageController">
+	<button ng-click="listPackages('thiDEYnji1usOzUv3eAzUhee5md65HQMRIJTMTt0GHYEmsJ66W+QxcIwkdbu+hdXRrMTOnfkALhunNgx+6AFVA==')">Listar paquetes</button><br>
+	<p ng-show="logged">{{"Auth token:"}}</p>
+	<table ng-show="logged" border=4>
+		<tr>
+		 	<td>ref</td>
+		 	<td>des</td>
+		 	<td>cos</td>
+		 	<td>sta</td>
+		 	<td>agen</td>
+		 	<td>arri</td>
+		 	<td>deli</td>
+		 </tr> 
+		<tr ng-repeat="package in packages|orderBy:'ref_number'">
+			<td>{{package.ref_number}}</td>
+			<td>{{package.description}}</td>
+			<td>{{package.shipping_cost}}</td>
+			<td>{{package.status}}</td>
+			<td>{{package.agency_id}}</td>
+			<td>{{package.date_arrived}}</td>
+			<td>{{package.date_delivered}}</td>
+		</tr>
+	</table>
+</div>

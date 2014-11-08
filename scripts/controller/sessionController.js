@@ -3,10 +3,8 @@ app.controller("sessionController",function($scope,$http){
 	$scope.logged=false;
 	$scope.token="";
 	
-	//logeo con un user0 para testear que conecte el API con el controller,
-	//pero al parecer no logra conectar
 	$scope.login=function(){
-		$http({method:'POST',url:url1,
+		$http({method:'GET',url:url1,
 		headers:{'username':$scope.username,'password':$scope.password}})
 		.success(function(data,status,headers,config){
 			$scope.logged=true;
