@@ -1,4 +1,4 @@
-<div class="navbar-full navbar-white">
+<div class="navbar-full navbar-white" ng-controller="sessionCtrl">
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
@@ -53,13 +53,13 @@
                 </ul>
               </li>
               <li>
-                <a id="usernameLabel" role="button" data-toggle="dropdown" data-target="#" href="" class="text-black">username <span class="caret"></span></a>
+                <a id="usernameLabel" role="button" data-toggle="dropdown" data-target="#" href="" class="text-black"><span ng-bind="username"></span> <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu" aria-labelledby="usernameLabel">
                   <li class="text-capitalize">
                     <a href="" class="text-capitalize">Profile</a>
                   </li>
                   <li class="text-capitalize">
-                    <a href="" class="text-capitalize">Logout</a>
+                    <a href="" class="text-capitalize" ng-click="logout()">Logout</a>
                   </li>
                 </ul>
               </li>
