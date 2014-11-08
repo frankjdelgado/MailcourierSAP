@@ -1,7 +1,7 @@
 // app.js
 
 // Define module
-var app = angular.module('mcapp', ['ui.router']);
+var app = angular.module('mcapp', ['ui.router','LocalStorageModule']);
 
 // Config routes
 app.config(['$urlRouterProvider','$stateProvider',function($urlRouterProvider,$stateProvider) {
@@ -17,3 +17,9 @@ app.config(['$urlRouterProvider','$stateProvider',function($urlRouterProvider,$s
 			templateUrl: 'templates/home.html'
 		});
 }]);
+
+app.config(function (localStorageServiceProvider) {
+  localStorageServiceProvider
+    .setStorageType('sessionStorage');
+});
+
