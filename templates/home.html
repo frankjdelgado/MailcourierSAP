@@ -1,65 +1,91 @@
 <div ng-controller="homeCtrl">
-	<div class="row">
-		<div class="col-xs-12">
-			<h1>{{ title }}</h1>	
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis voluptas fugiat cupiditate id accusantium, minus eligendi consectetur consequuntur nulla cumque. Doloribus repudiandae saepe et sequi? Voluptates qui, ullam dolorem nihil!</p>
-		</div>
-		<div class="col-xs-12 col-md-offset-1 col-md-4">
-			<h3 class="text-info text-center">Calculator</h3>
-			<br/>
-			<form ng-submit="calculate()">
-				<div class="form-group">
-					<div class="input-group">
-					  <div class="input-group-addon text-capitalize">Height</div>
-					  <input ng-model="package.height" id="height" class="form-control" type="text" placeholder="centimeters">
-					</div>
-				</div>
-				<div class="form-group">
-					<div class="input-group">
-					  <div class="input-group-addon text-capitalize">Width</div>
-					  <input ng-model="package.width" id="width" class="form-control" type="text" placeholder="centimeters">
-					</div>
-				</div>
-				<div class="form-group">
-					<div class="input-group">
-					  <div class="input-group-addon text-capitalize">Depth</div>
-					  <input ng-model="package.depth" id="depth" class="form-control" type="text" placeholder="centimeters">
-					</div>
-				</div>
-				<div class="form-group">
-					<div class="input-group">
-					  <div class="input-group-addon text-capitalize">Weight</div>
-					  <input ng-model="package.weight" id="weight" class="form-control" type="text" placeholder="kilograms">
-					</div>
-				</div>
-				<div class="form-group">
-					<div class="input-group">
-					  <div class="input-group-addon text-capitalize">Value</div>
-					  <input ng-model="package.value" id="value" class="form-control" type="text" placeholder="BsF">
-					</div>
-				</div>
-				<div class="form-group text-right">
-					<label for="price">Total:</label>
-					<span name="price"><span id="price"></span>{{shipping_cost}} Bsf.</span>
-				</div>
-				<div class="form-group text-right">
-					<button type="submit" class="btn btn-info text-capitalize" id="calc">calculate</button>
-				</div>
-			</form>
-		</div>
-		<div class="col-xs-12 col-md-offset-2 col-md-4">
-			<h3 class="text-info text-center">Rates</h3>
+	<div class="green-background">
+		<div class="container">
 			<div class="row">
-				<div class="col-xs-12 col-md-6">
-					<h3 class="text-center">Value</h3>
-					<p class="text-bold text-center">{{rate_value}}</p>
-				</div>
-				<div class="col-xs-12 col-md-6">
-					<h3 class="text-center">Dimension</h3>
-					<p class="text-bold text-center">{{rate_dimension}}</p>
+				<div class="col-xs-12">
+					<section class="presentation">
+						<h1>some title, <strong>subtitle</strong></h1>
+						<div class="row">
+							<div class="col-xs-offset-2 col-xs-8">
+								<p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio unde soluta quae iste deserunt accusantium cumque dicta facere laudantium reiciendis temporibus architecto tempora, illo assumenda? Doloribus quis magni reiciendis magnam aliquam quibusdam, vel aliquid perspiciatis quo? Eveniet numquam eum hic, at, dolor quos sequi odio, enim quis iure accusamus commodi alias temporibus quidem impedit sint earum nihil deserunt vero? Necessitatibus.</p>
+							</div>
+						</div>
+					</section>
 				</div>
 			</div>
 		</div>
 	</div>
-
+	
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12 col-md-offset-1 col-md-4">
+			<section class="info">
+				<div class="text-center">
+					<img src="../img/calculator.png">
+					<h2 class="text-capitalize">Calculator</h2>
+				</div>
+				<div class="separation-1">
+					<form ng-submit="calculate()">
+						<div class="form-group">
+							<div class="input-group">
+							  <div class="input-group-addon text-capitalize">Height</div>
+							  <input ng-model="package.height" id="height" class="form-control" type="text" placeholder="centimeters">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="input-group">
+							  <div class="input-group-addon text-capitalize">Width</div>
+							  <input ng-model="package.width" id="width" class="form-control" type="text" placeholder="centimeters">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="input-group">
+							  <div class="input-group-addon text-capitalize">Depth</div>
+							  <input ng-model="package.depth" id="depth" class="form-control" type="text" placeholder="centimeters">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="input-group">
+							  <div class="input-group-addon text-capitalize">Weight</div>
+							  <input ng-model="package.weight" id="weight" class="form-control" type="text" placeholder="kilograms">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="input-group">
+							  <div class="input-group-addon text-capitalize">Value</div>
+							  <input ng-model="package.value" id="value" class="form-control" type="text" placeholder="BsF">
+							</div>
+						</div>
+						<div class="form-group text-right">
+							<label for="price">Total:</label>
+							<span name="price"><span id="price"></span>{{shipping_cost}} Bsf.</span>
+						</div>
+						<div class="form-group text-right">
+							<button type="submit" class="btn btn-red text-capitalize" id="calc">calculate</button>
+						</div>
+					</form>
+				</div>
+			</section>
+		</div>
+		<div class="col-xs-12 col-md-5 col-md-offset-1">
+			<section class="info">
+				<div class="text-center">
+					<img src="../img/money.png" title="Keynote and PowerPoint icons by Magnus Emil Liisberg Helding is licensed under Free for commercial use">
+					<h2 class="text-capitalize">Prices</h2>
+				</div>
+				<div class="row rates">
+					<div class="col-xs-12 col-md-6 col-sm-6">
+						<h3 class="text-capitalize">Value</h3>
+						<p>{{rate_value}}</p>
+					</div>
+					<div class="col-xs-12 col-md-6 col-sm-6">
+						<h3 class="text-capitalize">Dimension</h3>
+						<p>{{rate_dimension}}</p>
+					</div>
+				</div>
+				<p class="text-center text-grey">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum nobis est dolorem at tempora nulla expedita, eaque, distinctio ut accusamus consequuntur nostrum, deserunt quas explicabo tempore ipsum hic vel amet.</p>
+			</section>
+		</div>
+	</div>
+</div>
 </div>
