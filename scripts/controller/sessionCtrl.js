@@ -8,6 +8,8 @@ angular
 		$scope.logged = false;
 		$scope.token = "";
 		
+
+		// User auth
 		$scope.login = function(){
 			$http({
 				method: 'GET',
@@ -28,4 +30,10 @@ angular
 				// error handling
 			});
 		};
+
+		// Check if user is logged
+		$scope.userIsLogged = function(){
+			return (localStorageService.get('token'))? true : false;
+		};
+
 	});
