@@ -1,9 +1,6 @@
 angular
 	.module('mcapp')
 	.controller('homeCtrl', ['$scope','$http', function($scope,$http){
-
-		// Title
-		$scope.title = "Welcome!";
 		
 		// Rates
 		var url = 'http://0.0.0.0:3000/api/v1/rate/active_rates';
