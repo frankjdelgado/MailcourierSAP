@@ -1,6 +1,6 @@
 angular
 	.module('mcapp')
-	.controller("sessionCtrl",function($scope,$http,localStorageService){
+	.controller("sessionCtrl",['$scope','$http','$location','localStorageService', function($scope,$http,$location,localStorageService){
 
 		var url = "http://0.0.0.0:3000/api/v1/session";
 		var guardado;
@@ -31,9 +31,16 @@ angular
 			});
 		};
 
+		// User logout
+		$scope.logout = function() {
+
+			// Destroy token and redirect to home
+			// localStorageService.remove("token");
+			$location.path("/");
+		};
+
 		// Check if user is logged
 		$scope.userIsLogged = function(){
 			return (localStorageService.get('token'))? true : false;
 		};
-
-	});
+	}]);
