@@ -5,4 +5,5 @@ Thumbs.db
 sap.sublime-project
 sap.sublime-workspace
 npm-debug.log
+/.sass-cache
 
