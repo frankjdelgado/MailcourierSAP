@@ -10,8 +10,8 @@ angular
 		
 		$scope.login = function(){
 			$http({
-				method:'GET',
-				url:url,
+				method: 'GET',
+				url: url,
 				headers:{
 					'username': $scope.username,
 					'password': $scope.password
@@ -21,7 +21,7 @@ angular
 				if(localStorageService.isSupported){
 					guardado = localStorageService.set('token', data.token);
 				}else{
-					alert("Your browser does not support localStorage")
+					alert("Your browser does not support localStorage");
 				}
 			})
 			.error(function(data,status,headers,config){

@@ -18,11 +18,17 @@ app.config(['$urlRouterProvider','$stateProvider',function($urlRouterProvider,$s
 		})
 		.state('login', {
 			url: '/login',
-			controler: 'sessionCtrk',
+			controler: 'sessionCtrl',
 			templateUrl: 'templates/session/login.html'
+		})
+		.state('packages', {
+			url: '/packages',
+			controler: 'packageCtrl',
+			templateUrl: 'templates/packages/index.html'
 		});
 }]);
 
+// Config localstorage
 app.config(function (localStorageServiceProvider) {
   localStorageServiceProvider
     .setStorageType('sessionStorage');
