@@ -1,0 +1,18 @@
+#table-package thead {
+  background-color: #2c3e50; }
+  #table-package thead th {
+    border-bottom: none;
+    color: #fff; }
+    #table-package thead th:first-child {
+      border-top-left-radius: 4px; }
+    #table-package thead th:last-child {
+      border-top-right-radius: 4px; }
+
+.title-separator {
+  margin-bottom: 30px; }
+
+#new_package input:focus, #new_package select:focus {
+  border: 1px solid #19bc9c; }
+
+#search-form:focus {
+  border-color: #19bc9c; }

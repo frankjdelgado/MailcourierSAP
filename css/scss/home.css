@@ -1,0 +1,74 @@
+.navbar-brand {
+  padding: 15px 0; }
+
+ul.navbar-nav li {
+  margin-right: 5px; }
+
+ul.navbar-nav li:last-child {
+  margin-right: 0; }
+
+.navbar-toggle {
+  background-color: #2c3e50;
+  color: #fff;
+  border-color: #2c3e50; }
+  .navbar-toggle .icon-bar {
+    background-color: #fff !important; }
+
+footer {
+  color: #fff; }
+
+.separation-1, .presentation, .info .rates {
+  padding-top: 35px;
+  padding-bottom: 20px; }
+
+.separation-2, .info {
+  padding-top: 50px;
+  padding-bottom: 20px; }
+
+.separation-3, footer {
+  padding-top: 20px;
+  padding-bottom: 20px; }
+
+.presentation h1 {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 15px; }
+  .presentation h1 strong {
+    color: #2c3e50; }
+
+.info h2 {
+  position: relative;
+  top: 20px;
+  margin-left: 15px;
+  display: inline-block; }
+.info .input-group-addon {
+  width: 100px !important;
+  color: #fff;
+  background-color: #de584d;
+  border-color: #de584d; }
+.info .form-control:focus {
+  border-color: #de584d;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(222, 88, 77, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(222, 88, 77, 0.6); }
+.info .total {
+  font-size: 15px;
+  margin-bottom: 5px;
+  text-align: right; }
+.info .rates {
+  padding-left: 0; }
+  .info .rates li {
+    list-style: none;
+    display: inline-block; }
+  .info .rates h3 {
+    text-transform: uppercase;
+    text-align: center;
+    color: #4fba6f;
+    margin-top: 0;
+    margin-bottom: 5px; }
+  .info .rates p {
+    font-size: 1.5em;
+    text-align: center; }
+
+#login .modal-dialog, #signup .modal-dialog {
+  width: 340px; }
