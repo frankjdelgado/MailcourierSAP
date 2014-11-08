@@ -18,7 +18,7 @@ app.config(['$urlRouterProvider','$stateProvider',function($urlRouterProvider,$s
 		})
 		.state('login', {
 			url: '/login',
-			controler: 'sessionController',
+			controler: 'sessionCtrk',
 			templateUrl: 'templates/session/login.html'
 		});
 }]);
