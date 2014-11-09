@@ -77,6 +77,34 @@ app.run(['$rootScope','localStorageService','$location', function($rootScope, lo
 		return (localStorageService.get('role') === 0)? true : false;
 	};
 
+	// Determine if thres a flash alert message, assign it to the scope and delete localStorage
+	$rootScope.alertExists = function(){
+		if(localStorageService.get('alert')){
+			$rootScope.alert = localStorageService.get('alert');
+			return true;
+		}else{
+			return false;
+		}
+	};
+	// Determine if thres a flash warning message, assign it to the scope and delete localStorage
+	$rootScope.warningExists = function(){
+		if(localStorageService.get('warning')){
+			$rootScope.warning = localStorageService.get('warning');
+			return true;
+		}else{
+			return false;
+		}
+	};
+	// Determine if thres a flash notice message, assign it to the scope and delete localStorage
+	$rootScope.noticeExists = function(){
+		if(localStorageService.get('notice')){
+			$rootScope.notice = localStorageService.get('notice');
+			return true;
+		}else{
+			return false;
+		}
+	};
+
 
 	/*
 	 *********************
