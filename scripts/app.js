@@ -97,6 +97,12 @@ app.run(['$rootScope','localStorageService','$location', function($rootScope, lo
 			$location.path('/');
 		}
 
+		// Restrict newPackage if user is commom member
+		if($rootScope.isMember() && toState.name === 'newPackage'){
+			event.preventDefault();
+			$location.path('/');
+		}
+
 	});
 	
 }]);
