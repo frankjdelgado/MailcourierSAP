@@ -71,7 +71,36 @@ angular
 
 		// User creation
 		$scope.signup = function(){
-			console.log('works!');
+			$http({
+				method: 'POST',
+				url: BASE_URL+'/user',
+				params:{
+					'email': $scope.user.email,
+					'username': $scope.user.username,
+					'agency_id': $scope.user.agency_id,
+					'password': $scope.user.password,
+					'password_confirmation': $scope.user.password_confirmation
+				}
+			})
+			.success(function(data,status,headers,config){
+				$location.path("/");
+			})
+			.error(function(data,status,headers,config){
+				// Error handling
+				console.log('it doesnt work')
+			});
 		};
+
+		// Set select agency options
+		$http({
+			method: 'GET',
+			url: BASE_URL+'/agency',
+		})
+		.success(function(data){
+			$scope.agencies =  data;
+		})
+		.error(function(data){
+			return [];
+		});
 
 	}]);

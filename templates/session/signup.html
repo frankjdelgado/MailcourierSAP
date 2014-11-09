@@ -15,12 +15,9 @@
 				</div>
 
 				<div class="form-group">
-					<label for="agency" class="text-uppercase">reception center</label>
-					<select required name="user.agency" class="form-control input-lg" ng-model="user.agency">
-						<option disabled selected>Select a location</option>
-						<option value="">option 1</option>
-						<option value="">option 2</option>
-						<option value="">option 3</option>
+					<label for="agency" class="text-uppercase">reception center</label>									
+					<select required name="agency" class="form-control input-lg" ng-model="user.agency_id" ng-options="agency.location for agency in agencies track by agency.id">
+						<option value="" disabled selected>Select a location</option>
 					</select>
 				</div>
 				<div class="form-group">
@@ -36,6 +33,7 @@
 			  	<div class="form-group">
 			  		<a href="" class="no-radius btn btn-green btn-block btn-lg text-uppercase" ng-click="signup()">Sign up</a>
 			  	</div>
+
 			</form>
 		</div>
 	</div>
