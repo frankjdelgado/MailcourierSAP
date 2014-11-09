@@ -1,28 +1,8 @@
 <div ng-controller="packageCtrl">
-	<form action="">
-		Search a specific package<input type="text" name="rnumber" ng-model="rnumber">
-	</form>
-	<button ng-click="listPackages()">List packages</button><br>
-	
-	<p ng-show="logged">{{"Auth token:"}}</p> 
-	<table ng-show="logged" border=4>
-		<tr>
-		 	<td>ref</td>
-		 	<td>des</td>
-		 	<td>cos</td>
-		 	<td>sta</td>
-		 	<td>agen</td>
-		 	<td>arri</td>
-		 	<td>deli</td>
-		 </tr> 
-		<tr ng-repeat="package in packages|orderBy:'ref_number'">
-			<td>{{package.ref_number}}</td>
-			<td>{{package.description}}</td>
-			<td>{{package.shipping_cost}}</td>
-			<td>{{package.status}}</td>
-			<td>{{package.agency_id}}</td>
-			<td>{{package.date_arrived}}</td>
-			<td>{{package.date_delivered}}</td>
-		</tr>
-	</table>
+	<div ng-if="isMember()">
+		<div ng-include="'templates/packages/users/user.html'" scope="" onload=""></div>
+	</div>
+	<div ng-if="!isMember()">
+		<div ng-include="'templates/packages/users/operator.html'" scope="" onload=""></div>
+	</div>
 </div>

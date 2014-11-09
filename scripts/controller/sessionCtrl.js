@@ -69,6 +69,10 @@ angular
 			$location.path("/");
 		};
 
+		$scope.goPackages=function(){
+			$location.path("/packages");
+		};
+
 		// User creation
 		$scope.signup = function(){
 			$http({

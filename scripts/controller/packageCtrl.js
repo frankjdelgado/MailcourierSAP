@@ -5,7 +5,17 @@ angular
 		var url = 'http://0.0.0.0:3000/api/v1/package';
 		var token;
 		$scope.rnumber="";
-		$scope.logged = false;
+		$scope.package1={
+			weight=0;
+			height=0;
+			width=0;
+			depth=0;
+			value=0;
+			agency_id=0;
+			sender_id=0;
+			receiver_id=0;
+			description="";
+		};
 
 		$scope.listPackages = function(){
 			if($scope.rnumber.length==0){
@@ -28,7 +38,6 @@ angular
 					}
 				})
 				.success(function(data,status,headers,config){
-					$scope.logged=true;
 					console.log(data);
 				})
 				.error(function(data,status,headers,config){
@@ -53,7 +62,6 @@ angular
 					}
 				})
 				.success(function(data,status,headers,config){
-					$scope.logged=true;
 					console.log(data);
 				})
 				.error(function(data,status,headers,config){
@@ -62,6 +70,10 @@ angular
 			}else{
 				alert("Your browser does not support localStorage");
 			}
+		};
+
+		$scope.createPackage=function(){
+
 		};
 
 	}]);
