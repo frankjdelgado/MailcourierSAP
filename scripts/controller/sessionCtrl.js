@@ -7,6 +7,35 @@ angular
 		// User auth. Get token, username, role and redirect to /packages
 		$scope.login = function(){
 			$http({
+				method: 'GET',
+				url: url,
+				headers:{
+					'username': $scope.user.username,
+					'password': $scope.user.password
+				}
+			})
+			.success(function(data,status,headers,config){
+				if(localStorageService.isSupported){
+
+					localStorageService.set('token', data.token);
+					localStorageService.set('username', data.username);
+					localStorageService.set('role', data.role);
+
+					$location.path("/");
+
+				}else{
+					alert("Your browser does not support localStorage");
+				}
+			})
+			.error(function(data,status,headers,config){
+				// If user doesnt have a token, create one and signin
+				$scope.loginPOST();
+			});
+		};
+
+		// Create token for user and sigin
+		$scope.loginPOST = function(){
+			$http({
 				method: 'POST',
 				url: url,
 				headers:{
@@ -33,7 +62,7 @@ angular
 		};
 
 
-		$scope.username = localStorageService.get('username');
+		
 
 		// User logout. Destroy localStroage and redirect to home
 		$scope.logout = function() {
@@ -44,9 +73,9 @@ angular
 		};
 
 		// Check if user is logged
-		$scope.userIsLogged = function(){
-			return (localStorageService.get('token'))? true : false;
-		};
+		// $scope.userIsLogged = function(){
+		// 	return (localStorageService.get('token'))? true : false;
+		// };
 
 		// Check if user is admin
 		$scope.isAdmin = function(){

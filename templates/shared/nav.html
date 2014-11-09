@@ -13,7 +13,7 @@
           </div>
 
           <div class="collapse navbar-collapse" id="menu">
-            <ul class="nav navbar-nav navbar-right" ng-if="userIsLogged()">     
+            <ul class="nav navbar-nav navbar-right" ng-if="isLogged()">     
               <!-- current_user.is_admin? -->
               <li>
                 <a id="rates" role="button" data-toggle="dropdown" data-target="#" href="" class="text-black text-capitalize">Rates</a>
@@ -64,7 +64,7 @@
                 </ul>
               </li>
             </ul>
-            <ul class="nav navbar-nav navbar-right" ng-if="!userIsLogged()"> 
+            <ul class="nav navbar-nav navbar-right" ng-if="!isLogged()"> 
               <li class="text-uppercase">
                 <a href="" ui-sref="login">login</a>
               </li>

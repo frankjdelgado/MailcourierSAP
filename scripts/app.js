@@ -37,9 +37,16 @@ app.config(['$urlRouterProvider','$stateProvider','$locationProvider',function($
 app.run(['$rootScope','localStorageService','$location', function($rootScope, localStorageService, $location){
 
 	// Global functions
+
+	// Check if user is logged
 	$rootScope.isLogged = function(){
 		return (localStorageService.get('token'))? true : false;
 	};
+
+	// Show Users username
+    $rootScope.username = function(){
+		return localStorageService.get('username');
+    };
 
 	// Route filters
 	$rootScope.$on("$stateChangeStart",function (event, toState, toParams, fromState, fromParams) {
