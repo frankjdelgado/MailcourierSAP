@@ -5,16 +5,4 @@
 	<div ng-if="!isMember()">
 		<div ng-include="'templates/packages/users/operator.html'" scope="" onload=""></div>
 	</div>
-	<form action="">
-		weight: <input type="number" ng-model="package.weight"><br>
-		height: <input type="number" ng-model="package.height"><br>
-		width: <input type="number" ng-model="package.width"><br>
-		depth: <input type="number" ng-model="package.depth"><br>
-		value: <input type="number" ng-model="package.value"><br>
-		agency Id: <input type="number" ng-model="package.agency_id"><br>
-		sender Id: <input type="number" ng-model="package.sender_id"><br>
-		receiver Id: <input type="number" ng-model="package.receiver_id"><br>
-		Description: <input type="text" ng-model="package.description"><br>
-		<button type="submit" ng-click="createPackage()">Create Package</button><br>
-	</form>
 </div>
