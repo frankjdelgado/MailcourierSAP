@@ -83,7 +83,8 @@ angular
 				}
 			})
 			.success(function(data,status,headers,config){
-				console.log(data);
+				//console.log(data);
+				$scope.package=data;
 			})
 			.error(function(data,status,headers,config){
 				console.log(data);
@@ -104,7 +105,8 @@ angular
 				}
 			})
 			.success(function(data,status,headers,config){
-				console.log(data);
+//				console.log(data);
+				$scope.package=data;
 			})
 			.error(function(data,status,headers,config){
 				console.log(data);
