@@ -8,7 +8,7 @@ angular
 		$scope.login = function(){
 			$http({
 				method: 'GET',
-				url: url+'/session',
+				url: BASE_URL+'/session',
 				headers:{
 					'username': $scope.user.username,
 					'password': $scope.user.password
@@ -37,7 +37,7 @@ angular
 		$scope.loginPOST = function(){
 			$http({
 				method: 'POST',
-				url: url+'/session',
+				url: BASE_URL+'/session',
 				headers:{
 					'username': $scope.user.username,
 					'password': $scope.user.password
