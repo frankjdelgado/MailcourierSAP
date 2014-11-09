@@ -87,7 +87,7 @@ angular
 			})
 			.error(function(data,status,headers,config){
 				// Error handling
-				console.log('it doesnt work')
+				console.log('it doesnt work');
 			});
 		};
 

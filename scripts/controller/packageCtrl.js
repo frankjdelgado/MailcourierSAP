@@ -1,6 +1,10 @@
 angular
 	.module('mcapp')
-	.controller('packageCtrl', ['$scope','$http','localStorageService', function($scope,$http,localStorageService){
+	.controller('packageCtrl', ['$scope','$http',
+		//'$modal',
+		'localStorageService', function($scope,$http,
+		//	$modal,
+			localStorageService){
 		
 		var BASE_URL = "http://0.0.0.0:3000/api/v1";
 		var token;
@@ -84,8 +88,12 @@ angular
 			})
 			.success(function(data,status,headers,config){
 				//console.log(data);
-				$scope.package=data;
-			})
+/*				var popMsg = $modal({
+					title:'Package Created',
+					content: 'The package has been created successfully. Its reference number is: '+data.ref_number,
+					show:true
+				});
+*/			})
 			.error(function(data,status,headers,config){
 				console.log(data);
 			});
@@ -106,8 +114,12 @@ angular
 			})
 			.success(function(data,status,headers,config){
 //				console.log(data);
-				$scope.package=data;
-			})
+/*				var popMsg = $modal({
+					title:'Package Status Changed',
+					content: 'The package status changed successfully.',
+					show:true
+				});
+*/			})
 			.error(function(data,status,headers,config){
 				console.log(data);
 			});

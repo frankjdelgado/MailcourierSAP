@@ -1,7 +1,7 @@
 // app.js
 
 // Define module
-var app = angular.module('mcapp', ['ui.router','LocalStorageModule','mgcrea.ngStrap']);
+var app = angular.module('mcapp', ['ui.router','LocalStorageModule']);
 
 // Config routes
 app.config(['$urlRouterProvider','$stateProvider','$locationProvider',function($urlRouterProvider, $stateProvider, $locationProvider) {
