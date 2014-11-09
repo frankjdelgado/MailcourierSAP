@@ -30,6 +30,11 @@ app.config(['$urlRouterProvider','$stateProvider','$locationProvider',function($
 			url: '/packages',
 			controler: 'packageCtrl',
 			templateUrl: 'templates/packages/index.html'
+		})
+		.state('newPackage', {
+			url: '/packages/new',
+			controler: 'packageCtrl',
+			templateUrl: 'templates/packages/new.html'
 		});
 
 	// Get rid of /#/ on routes
@@ -88,6 +93,12 @@ app.run(['$rootScope','localStorageService','$location', function($rootScope, lo
 
 		// Restrict all private URLs for not authorized users
 		if(!$rootScope.isLogged() && ['home','login', 'signup'].indexOf(toState.name) === -1 ){
+			event.preventDefault();
+			$location.path('/');
+		}
+
+		// Restrict newPackage if user is commom member
+		if($rootScope.isMember() && toState.name === 'newPackage'){
 			event.preventDefault();
 			$location.path('/');
 		}

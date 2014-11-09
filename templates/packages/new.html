@@ -1,0 +1,89 @@
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12">
+			<ul class="list-unstyled list-inline title-separator">
+				<li class="align-middle"><img src="../../img/add.png" alt="" class="img-responsive img-sm" title="small-n-flat by Paomedi is licensed under CC BY 3.0"></li>
+				<li class="align-middle"><h3 class="no-margin text-capitalize">New Package</h3></li>
+			</ul>
+		</div>
+		<div class="col-xs-12 col-md-8">
+			<form role="form" class="form-horizontal">
+				<div class="form-group">
+					<label for="description" class="col-sm-2 control-label text-capitalize">Description</label>
+					<div class="col-xs-12 col-md-8">
+						<input type="text" name="description" class="form-control" placeholder="Package description" required autocomplete="off" ng-model="package.description">
+					</div>
+
+				</div>
+				<div class="form-group">
+					<label for="weight" class="col-sm-2 control-label text-capitalize">weight</label>
+					<div class="col-xs-12 col-md-8">
+					<input type="text" name="weight" class="form-control" placeholder="Weight in kilograms" required autocomplete="off" ng-model="package.weight">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="height" class="col-sm-2 control-label text-capitalize">height</label>
+					<div class="col-xs-12 col-md-8">
+					<input type="text" name="height" class="form-control" placeholder="Height in centimeters" required autocomplete="off" ng-model="package.height">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="width" class="col-sm-2 control-label text-capitalize">width</label>
+					<div class="col-xs-12 col-md-8">
+					<input type="text" name="width" class="form-control" placeholder="Width in centimeters" required autocomplete="off" ng-model="package.width">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="depth" class="col-sm-2 control-label text-capitalize">depth</label>
+					<div class="col-xs-12 col-md-8">
+					<input type="text" name="depth" class="form-control" placeholder="Depth in centimeters" required autocomplete="off" ng-model="package.depth">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="value" class="col-sm-2 control-label text-capitalize">value</label>
+					<div class="col-xs-12 col-md-8">
+					<input type="text" name="value" class="form-control" placeholder="Value in Bsf" required autocomplete="off" ng-model="package.value">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="Destination" class="col-sm-2 control-label text-capitalize">destination</label>
+					<div class="col-xs-12 col-md-8">
+					<select required name="agency" class="form-control" ng-model="package.agency_id" ng-options="agency.location for agency in agencies track by agency.id">
+						<option value="" disabled selected>Select a location</option>
+					</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="Sender" class="col-sm-2 control-label text-capitalize">sender</label>
+					<div class="col-xs-12 col-md-8">
+					<input type="text" name="sender" class="form-control" placeholder="exampleUsername" required autocomplete="off" ng-model="package.sender">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="Receiver" class="col-sm-2 control-label text-capitalize">receiver</label>
+					<div class="col-xs-12 col-md-8">
+					<input type="text" name="receiver" class="form-control" placeholder="exampleUsername" required autocomplete="off" ng-model="package.receiver">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="shipping_cost" class="col-sm-2 control-label text-capitalize">shipping_cost</label>
+					<div class="col-xs-12 col-md-8">
+						<div class="input-group">
+							<input type="text" name="shipping_cost" class="form-control" required autocomplete="off" ng-model="package.shipping_cost">
+					        <div class="input-group-btn">
+					            <button class="btn btn-green text-capitalize" type="button">calculate</button>
+					        </div>
+					    </div>
+					</div>
+				</div>
+
+				<div class="form-group text-right">
+					<div class="col-xs-12">
+						<br>
+						<button class="no-radius btn btn-green text-capitalize" type="button">Add Package</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
