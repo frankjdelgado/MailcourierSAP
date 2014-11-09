@@ -2,13 +2,13 @@ angular
 	.module('mcapp')
 	.controller("sessionCtrl",['$scope','$http','$location','localStorageService', function($scope,$http,$location,localStorageService){
 
-		var url = "http://0.0.0.0:3000/api/v1/session";
+		var BASE_URL = "http://0.0.0.0:3000/api/v1";
 		
 		// User auth. Get token, username, role and redirect to /packages
 		$scope.login = function(){
 			$http({
 				method: 'GET',
-				url: url,
+				url: url+'/session',
 				headers:{
 					'username': $scope.user.username,
 					'password': $scope.user.password
@@ -37,7 +37,7 @@ angular
 		$scope.loginPOST = function(){
 			$http({
 				method: 'POST',
-				url: url,
+				url: url+'/session',
 				headers:{
 					'username': $scope.user.username,
 					'password': $scope.user.password
@@ -72,6 +72,6 @@ angular
 		// User creation
 		$scope.signup = function(){
 			console.log('works!');
-		}
+		};
 
 	}]);
