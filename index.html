@@ -39,11 +39,7 @@
 	<header ng-include="'templates/shared/nav.html'" scope="" onload=""></header>
 
 	<!-- Render messages -->
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-12" ng-include="'templates/shared/messages.html'"></div>
-		</div>
-	</div>
+	<div ng-include="'templates/shared/messages.html'"></div>
 
 	<!-- Display templates -->
 	<div ui-view></div>

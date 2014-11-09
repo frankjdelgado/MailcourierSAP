@@ -81,7 +81,6 @@ app.run(['$rootScope','localStorageService','$location', function($rootScope, lo
 	$rootScope.alertExists = function(){
 		if(localStorageService.get('alert')){
 			$rootScope.alert = localStorageService.get('alert');
-			localStorageService.remove("alert");
 			return true;
 		}else{
 			return false;
@@ -91,7 +90,6 @@ app.run(['$rootScope','localStorageService','$location', function($rootScope, lo
 	$rootScope.warningExists = function(){
 		if(localStorageService.get('warning')){
 			$rootScope.warning = localStorageService.get('warning');
-			localStorageService.remove("warning");
 			return true;
 		}else{
 			return false;
@@ -101,7 +99,6 @@ app.run(['$rootScope','localStorageService','$location', function($rootScope, lo
 	$rootScope.noticeExists = function(){
 		if(localStorageService.get('notice')){
 			$rootScope.notice = localStorageService.get('notice');
-			localStorageService.remove("notice");
 			return true;
 		}else{
 			return false;
