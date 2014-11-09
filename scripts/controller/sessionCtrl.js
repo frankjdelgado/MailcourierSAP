@@ -61,9 +61,6 @@ angular
 			});
 		};
 
-
-		
-
 		// User logout. Destroy localStroage and redirect to home
 		$scope.logout = function() {
 			localStorageService.remove("token");
@@ -72,23 +69,9 @@ angular
 			$location.path("/");
 		};
 
-		// Check if user is logged
-		// $scope.userIsLogged = function(){
-		// 	return (localStorageService.get('token'))? true : false;
-		// };
+		// User creation
+		$scope.signup = function(){
+			console.log('works!');
+		}
 
-		// Check if user is admin
-		$scope.isAdmin = function(){
-			return (localStorageService.get('role') == '2')? true : false;
-		};
-
-		// Check if user is operator
-		$scope.isOperator = function(){
-			return (localStorageService.get('role') == '1')? true : false;
-		};
-
-		// Check if user is member
-		$scope.isMember = function(){
-			return (localStorageService.get('role') === '0')? true : false;
-		};
 	}]);

@@ -15,7 +15,7 @@
           <div class="collapse navbar-collapse" id="menu">
             <ul class="nav navbar-nav navbar-right" ng-if="isLogged()">     
               <!-- current_user.is_admin? -->
-              <li>
+              <li ng-if="isAdmin()">
                 <a id="rates" role="button" data-toggle="dropdown" data-target="#" href="" class="text-black text-capitalize">Rates</a>
                 <ul class="dropdown-menu" role="menu" aria-labelledby="rates">
                   <li class="text-capitalize">
@@ -27,7 +27,7 @@
                 </ul>
               </li>
 
-              <li>
+              <li ng-if="isAdmin()">
                 <a id="Operator" role="button" data-toggle="dropdown" data-target="#" href="" class="text-black text-capitalize">Operators</a>
                 <ul class="dropdown-menu" role="menu" aria-labelledby="Operator">
                   <li class="text-capitalize">
@@ -46,7 +46,7 @@
                     <a href="" class="text-capitalize">Package List</a>
                   </li>
                   <!-- !current_user.is_member? -->
-                    <li class="text-capitalize">
+                    <li class="text-capitalize" ng-if="!isMember()">
                       <a href="" class="text-capitalize">New Package</a>
                     </li>
                   <!-- end !current_user.is_member? -->
@@ -69,7 +69,7 @@
                 <a href="" ui-sref="login">login</a>
               </li>
               <li class="text-uppercase">
-                <a  href="">sign up</a>
+                <a  href="" ui-sref="signup">sign up</a>
               </li>
             </ul>
           </div>

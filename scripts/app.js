@@ -21,6 +21,11 @@ app.config(['$urlRouterProvider','$stateProvider','$locationProvider',function($
 			controler: 'sessionCtrl',
 			templateUrl: 'templates/session/login.html'
 		})
+		.state('signup', {
+			url: '/signup',
+			controler: 'sessionCtrl',
+			templateUrl: 'templates/session/signup.html'
+		})
 		.state('packages', {
 			url: '/packages',
 			controler: 'packageCtrl',
@@ -36,7 +41,11 @@ app.config(['$urlRouterProvider','$stateProvider','$locationProvider',function($
 // Global $scope
 app.run(['$rootScope','localStorageService','$location', function($rootScope, localStorageService, $location){
 
-	// Global functions
+	/*
+	 *********************
+	 * Global functions  *
+	 *********************
+	 */
 
 	// Check if user is logged
 	$rootScope.isLogged = function(){
@@ -48,7 +57,27 @@ app.run(['$rootScope','localStorageService','$location', function($rootScope, lo
 		return localStorageService.get('username');
     };
 
-	// Route filters
+	// Check if user is admin
+	$rootScope.isAdmin = function(){
+		return (localStorageService.get('role') === '2')? true : false;
+	};
+
+	// Check if user is operator
+	$rootScope.isOperator = function(){
+		return (localStorageService.get('role') === '1')? true : false;
+	};
+
+	// Check if user is member
+	$rootScope.isMember = function(){
+		return (localStorageService.get('role') === 0)? true : false;
+	};
+
+
+	/*
+	 *********************
+	 * Route filters     *
+	 *********************
+	 */
 	$rootScope.$on("$stateChangeStart",function (event, toState, toParams, fromState, fromParams) {
 
 		// Restrict Login when user is already logged
