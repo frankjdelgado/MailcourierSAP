@@ -22,6 +22,9 @@ angular
 					localStorageService.set('role', data.role);
 
 					$location.path("/");
+					
+					localStorageService.set('notice', 'Welcome! You have successfully sign in.');
+
 
 				}else{
 					alert("Your browser does not support localStorage");
@@ -87,7 +90,7 @@ angular
 			})
 			.error(function(data,status,headers,config){
 				// Error handling
-				console.log('it doesnt work')
+				console.log('it doesnt work');
 			});
 		};
 

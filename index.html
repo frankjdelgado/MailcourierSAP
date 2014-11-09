@@ -18,10 +18,7 @@
 	<script src="bower_components/angular-local-storage/dist/angular-local-storage.min.js"></script>
 	<!-- Router -->
 	<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-	<!-- Messages -->
-	<script src="bower_components/angular-animate/angular-animate.js"></script>
-	<script src="bower_components/angular-strap/dist/angular-strap.min.js"></script>
-	<script src="bower_components/angular-strap/dist/angular-strap.tpl.min.js"></script>
+
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -40,6 +37,14 @@
 <body>
 	<!-- Render Header -->
 	<header ng-include="'templates/shared/nav.html'" scope="" onload=""></header>
+
+	<!-- Render messages -->
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12" ng-include="'templates/shared/messages.html'"></div>
+		</div>
+	</div>
+
 	<!-- Display templates -->
 	<div ui-view></div>
 

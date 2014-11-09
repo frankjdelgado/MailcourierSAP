@@ -1,7 +1,7 @@
 // app.js
 
 // Define module
-var app = angular.module('mcapp', ['ui.router','LocalStorageModule','mgcrea.ngStrap']);
+var app = angular.module('mcapp', ['ui.router','LocalStorageModule']);
 
 // Config routes
 app.config(['$urlRouterProvider','$stateProvider','$locationProvider',function($urlRouterProvider, $stateProvider, $locationProvider) {
@@ -75,6 +75,37 @@ app.run(['$rootScope','localStorageService','$location', function($rootScope, lo
 	// Check if user is member
 	$rootScope.isMember = function(){
 		return (localStorageService.get('role') === 0)? true : false;
+	};
+
+	// Determine if thres a flash alert message, assign it to the scope and delete localStorage
+	$rootScope.alertExists = function(){
+		if(localStorageService.get('alert')){
+			$rootScope.alert = localStorageService.get('alert');
+			localStorageService.remove("alert");
+			return true;
+		}else{
+			return false;
+		}
+	};
+	// Determine if thres a flash warning message, assign it to the scope and delete localStorage
+	$rootScope.warningExists = function(){
+		if(localStorageService.get('warning')){
+			$rootScope.warning = localStorageService.get('warning');
+			localStorageService.remove("warning");
+			return true;
+		}else{
+			return false;
+		}
+	};
+	// Determine if thres a flash notice message, assign it to the scope and delete localStorage
+	$rootScope.noticeExists = function(){
+		if(localStorageService.get('notice')){
+			$rootScope.notice = localStorageService.get('notice');
+			localStorageService.remove("notice");
+			return true;
+		}else{
+			return false;
+		}
 	};
 
 
