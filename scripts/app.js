@@ -40,6 +40,11 @@ app.config(['$urlRouterProvider','$stateProvider','$locationProvider',function($
 			url: '/users',
 			controler: 'userCtrl',
 			templateUrl: 'templates/users/index.html'
+		})
+		.state('rates', {
+			url: '/rates',
+			controler: 'rateCtrl',
+			templateUrl: 'templates/rates/index.html'
 		});
 
 	// Get rid of /#/ on routes

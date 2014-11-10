@@ -1,0 +1,11 @@
+<div ng-controller="rateCtrl">
+	Cost:<input type="text" ng-model="rate.cost"><br>
+	Package:<input type="text" ng-model="rate.package"><br>
+	Confirm password: <input type="password" ng-model="password2"><br>
+	<button ng-click="createRate()">create rate </button>
+	<form action="">
+		<input type="text" ng-model="rate.id">
+		<input type="number" ng-model="rate.status">
+		<button ng-click="changeStatusRate()">Change Status</button>
+	</form>
+</div>

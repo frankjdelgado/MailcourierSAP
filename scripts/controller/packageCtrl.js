@@ -83,13 +83,8 @@ angular
 				}
 			})
 			.success(function(data,status,headers,config){
-				//console.log(data);
-/*				var popMsg = $modal({
-					title:'Package Created',
-					content: 'The package has been created successfully. Its reference number is: '+data.ref_number,
-					show:true
-				});
-*/			})
+				localStorageService.set('notice','The package has been created successfully');
+			})
 			.error(function(data,status,headers,config){
 				console.log(data);
 			});
@@ -109,19 +104,11 @@ angular
 				}
 			})
 			.success(function(data,status,headers,config){
-//				console.log(data);
-/*				var popMsg = $modal({
-					title:'Package Status Changed',
-					content: 'The package status changed successfully.',
-					show:true
-				});
-*/			})
+				localStorageService.set('notice','The status of the package was updated successfully');
+			})
 			.error(function(data,status,headers,config){
 				console.log(data);
 			});
-
 		};
-
-
 
 	}]);
