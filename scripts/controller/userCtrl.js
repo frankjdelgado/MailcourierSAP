@@ -5,6 +5,7 @@ angular
 		var BASE_URL = "http://0.0.0.0:3000/api/v1";
 		var id=0;
 		var username="";
+
 		//get the user id from the username, then make the pw change
 		$scope.changePassword=function(){
 			token = localStorageService.get('token');
@@ -49,5 +50,31 @@ angular
 				console.log(data);
 			});
 		};
+
+		$scope.createUser=function(){
+			token = localStorageService.get('token');
+			$http({
+				method: 'POST',
+				url: BASE_URL+'/user',
+				headers:{
+					'token': token
+				},
+				params:{
+					'username': $scope.username,
+					'email': $scope.email,
+					'agency_id': $scope.agency_id,
+					'password': $scope.password1,
+					'password_confirmation': $scope.password2,
+					'role':$scope.role
+				}
+			})
+			.success(function(data,status,headers,config){
+				localStorageService.set('notice','The user has been created successfully');
+			})
+			.error(function(data,status,headers,config){
+				localStorageService.set('alert','Error creating the user');
+			});
+		};
+
 
 	}]);
