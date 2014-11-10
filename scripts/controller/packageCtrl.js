@@ -1,10 +1,6 @@
 angular
 	.module('mcapp')
-	.controller('packageCtrl', ['$scope','$http',
-		//'$modal',
-		'localStorageService', function($scope,$http,
-		//	$modal,
-			localStorageService){
+	.controller('packageCtrl', ['$scope','$http', 'localStorageService', function($scope,$http,localStorageService){
 		
 		var BASE_URL = "http://0.0.0.0:3000/api/v1";
 		var token;

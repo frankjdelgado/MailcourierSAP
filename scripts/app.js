@@ -35,6 +35,11 @@ app.config(['$urlRouterProvider','$stateProvider','$locationProvider',function($
 			url: '/packages/new',
 			controler: 'packageCtrl',
 			templateUrl: 'templates/packages/new.html'
+		})
+		.state('users', {
+			url: '/users',
+			controler: 'userCtrl',
+			templateUrl: 'templates/users/index.html'
 		});
 
 	// Get rid of /#/ on routes
