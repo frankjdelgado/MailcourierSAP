@@ -94,16 +94,4 @@ angular
 			});
 		};
 
-		// Set select agency options
-		$http({
-			method: 'GET',
-			url: BASE_URL+'/agency',
-		})
-		.success(function(data){
-			$scope.agencies =  data;
-		})
-		.error(function(data){
-			return [];
-		});
-
 	}]);

@@ -14,7 +14,7 @@
 					<input required type="text" class="form-control input-lg" ng-model="user.username">
 				</div>
 
-				<div class="form-group">
+				<div class="form-group" ng-controller="agencyCtrl">
 					<label for="agency" class="text-uppercase">Reception Center<span title="designated agency for operator" class="glyphicon glyphicon-info-sign"></span></label>
 					<select required name="agency" class="form-control input-lg" ng-model="user.agency_id" ng-options="agency.location for agency in agencies track by agency.id">
 						<option value="" disabled selected>Select a location</option>
