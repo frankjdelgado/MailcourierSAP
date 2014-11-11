@@ -1,6 +1,6 @@
 angular
 	.module('mcapp')
-	.controller("userCtrl",['$scope','$http','localStorageService', function($scope,$http,localStorageService){
+	.controller("userCtrl",['$scope','$state','$http','localStorageService', function($scope,$state,$http,localStorageService){
 
 		var BASE_URL = "http://0.0.0.0:3000/api/v1";
 		var id=0;
@@ -51,7 +51,7 @@ angular
 			});
 		};
 
-		$scope.createUser=function(){
+		$scope.newUser = function(){
 			token = localStorageService.get('token');
 			$http({
 				method: 'POST',
@@ -60,15 +60,16 @@ angular
 					'token': token
 				},
 				params:{
-					'username': $scope.username,
-					'email': $scope.email,
-					'agency_id': $scope.agency_id,
-					'password': $scope.password1,
-					'password_confirmation': $scope.password2,
-					'role':$scope.role
+					'username': $scope.user.username,
+					'email': $scope.user.email,
+					'agency_id': $scope.user.agency_id,
+					'password': $scope.user.password,
+					'password_confirmation': $scope.user.password_confirmation,
+					'role': '1'
 				}
 			})
 			.success(function(data,status,headers,config){
+				$state.go($state.current, {}, {reload: true}); 
 				localStorageService.set('notice','The user has been created successfully');
 			})
 			.error(function(data,status,headers,config){
