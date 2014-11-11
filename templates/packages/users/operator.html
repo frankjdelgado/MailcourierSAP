@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" ng-controller="packageCtrl">
 	<div class="row">
 		<div class="col-xs-12">
 			<ul class="list-unstyled list-inline title-separator">
@@ -27,14 +27,14 @@
 							<td>{{package.ref_number}}</td>
 							<td>{{package.description}}</td>
 							<td class="text-capitalize">{{package.status}}</td>
-							<td>{{package.receiver_id}}</td>
-							<td>{{package.sender_id}}</td>
+							<td>{{(package.receiver).username}}</td>
+							<td>{{(package.sender).username}}</td>
 							<td>
 								<!-- if package is pending, mark as arrived (status = 1) -->
-								<a confirm= "Are you sure you want to mark this package as Arrived?" href="" class="btn btn-block btn-xs btn-black text-capitalize">Arrived</a>
+								<a ng-click="asArrived(package.id)" confirm= "Are you sure you want to mark this package as Arrived?" href="" class="btn btn-block btn-xs btn-black text-capitalize">Arrived</a>
 								
 								<!-- if package already arrived, mark as delivered (status = 2) -->
-								<a confirm ="Are you sure you want to mark this package as Delivered?" href="" class="text-capitalize btn btn-block btn-xs btn-green text-capitalize">Delivered</a>
+								<a ng-click="asDelivered(package.id)" confirm ="Are you sure you want to mark this package as Delivered?" href="" class="text-capitalize btn btn-block btn-xs btn-green text-capitalize">Delivered</a>
 							</td>
 							<td>
 								<a href="path/to/package" class="text-capitalize">View Details</a>
@@ -50,28 +50,21 @@
 		<div class="col-md-offset-1 col-md-3 col-xs-12">
 			<form action = "" role = "form" id="search-form">
 				<div class="input-group form-group">
-					<input type="text" name = "search" class="form-control" placeholder="Search packages" id="search-form">
+					<input ng-model="search.input" type="text" name = "search" class="form-control" placeholder="Search packages" id="search-form">
 			        <div class="input-group-btn">
-			            <button class="btn btn-green" type="button"><i class="glyphicon glyphicon-search"></i></button>
+			            <button ng-click="searchPackages()" class="btn btn-green" type="button"><i class="glyphicon glyphicon-search"></i></button>
 			        </div>
 			    </div>
 			    <span class="text-grey">Search by...</span>
 				<div class="radio">
 					<label class="radio-inline">
-						<input checked type="radio" name="search_by" id="search-by1" value="user"> User
+						<input ng-true-value="true" ng-false-value="false" ng-model="search.user" checked type="checkbox" name="search_by" id="search-by1" value="user"> User
 					</label>
 					<label class="radio-inline">
-						<input type="radio" name="search_by" id="search-by2" value="package"> Ref. number
+						<input  ng-true-value="true" ng-false-value="false" ng-model="search.ref" type="checkbox" name="search_by" id="search-by2" value="package"> Ref. number
 					</label>
 				</div>
 			</form>
-			<!-- if package count is not blank -->
-				<!-- if count == 0 -->
-	    			<p class="text-danger text-center text-capitalize"><span></span> packages found</p>
-	    		<!-- else-->
-	    			<p class="text-success text-center text-capitalize"><span></span> packages found</p>
-	    		<!-- end -->
-	    	<!-- end -->
 		</div>
 	</div>
 </div>

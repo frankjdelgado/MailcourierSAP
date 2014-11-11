@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" ng-controller="packageCtrl">
 	<div class="row">
 		<div class="col-xs-12">
 			<ul class="list-unstyled list-inline title-separator">
@@ -13,7 +13,6 @@
 				<table class="table table-hover" id="table-package">
 					<thead>
 						<tr class="text-capitalize">
-							<th>#</th>
 							<th>Ref. Number</th>
 							<th>Description</th>
 							<th>Role</th>
@@ -32,26 +31,17 @@
 					</tbody>
 				</table>
 			</div>
-			<div class="text-right">
-				<a href="path/to/package" class="text-capitalize">View Details</a>
-			</div>
 		</div>
 		<div class="col-md-offset-1 col-md-3 col-xs-12">
 			<form action = "" role = "form" id="search-form">
 				<div class="input-group form-group">
-					<input type="text" name = "search" class="form-control" placeholder="Search by Ref. number" id="search-form">
+					<input ng-model="search.ref" type="text" name = "search" class="form-control" placeholder="Search by Ref. number" id="search-form">
 			        <div class="input-group-btn">
-			            <button class="btn btn-green" type="button"><i class="glyphicon glyphicon-search"></i></button>
+			            <button ng-click="searchPackages2()" class="btn btn-green" type="button"><i class="glyphicon glyphicon-search"></i></button>
 			        </div>
 			    </div>
 			</form>
-			<!-- if package count is not blank -->
-				<!-- if count == 0 -->
-	    			<p class="text-danger text-center text-capitalize"><span></span> packages found</p>
-	    		<!-- else-->
-	    			<p class="text-success text-center text-capitalize"><span></span> packages found</p>
-	    		<!-- end -->
-	    	<!-- end -->
+
 		</div>
 	</div>
 </div>

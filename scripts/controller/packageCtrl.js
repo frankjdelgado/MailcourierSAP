@@ -7,6 +7,23 @@ angular
 		$scope.rnumber="";
 		$scope.package=0;
 
+
+		$http({
+			method: 'GET',
+			url: BASE_URL+'/package',
+			headers:{
+				'token': localStorageService.get('token')
+			}
+		})
+		.success(function(data,status,headers,config){
+			$scope.packages = data;
+		})
+		.error(function(data,status,headers,config){
+
+		});
+
+
+
 		$scope.listPackages = function(){
 			if($scope.rnumber.length===0){
 				$scope.searchPackages();
@@ -18,26 +35,50 @@ angular
 		$scope.searchPackages = function(){
 			if(localStorageService.isSupported){
 				token = localStorageService.get('token');
-				$http({
-					method: 'GET',
-					url: BASE_URL+'/package',
-					headers:{
-						'token': token
-					}
-				})
-				.success(function(data,status,headers,config){
-					//console.log(data);
-					$scope.packages=data;
-				})
-				.error(function(data,status,headers,config){
+				if ($scope.search.user) {
+					$http({
+						method: 'GET',
+						url: BASE_URL+'/package',
+						headers:{
+							'token': token
+						},
+						params:{
+							'username': $scope.search.input
+						}
+					})
+					.success(function(data,status,headers,config){
+						$scope.packages=data;
+					})
+					.error(function(data,status,headers,config){
 
-				});
+					});
+
+				};
+
+				if ($scope.search.ref) {
+					$http({
+						method: 'GET',
+						url: BASE_URL+'/package',
+						headers:{
+							'token': token
+						},
+						params:{
+							'ref_number': $scope.search.input
+						}
+					})
+					.success(function(data,status,headers,config){
+						$scope.packages=data;
+					})
+					.error(function(data,status,headers,config){
+
+					});
+				};
 			}else{
 				alert("Your browser does not support localStorage");
 			}
 		};
 
-		$scope.searchPackage=function($ref_number){
+		$scope.searchPackages2 = function(){
 			if(localStorageService.isSupported){
 				token = localStorageService.get('token');
 				$http({
@@ -47,20 +88,20 @@ angular
 						'token': token
 					},
 					params:{
-						'ref_number': $ref_number
+						'ref_number': $scope.search.ref
 					}
 				})
 				.success(function(data,status,headers,config){
-					//console.log(data);
 					$scope.packages=data;
 				})
 				.error(function(data,status,headers,config){
 
-				});
+					});
 			}else{
 				alert("Your browser does not support localStorage");
 			}
 		};
+
 
 		$scope.addPackage = function(){
 			token = localStorageService.get('token');
@@ -110,6 +151,46 @@ angular
 			})
 			.error(function(data,status,headers,config){
 				console.log(data);
+			});
+		};
+
+		$scope.asArrived=function(id){
+			token = localStorageService.get('token');
+			$http({
+				method: 'PUT',
+				url: BASE_URL+'/package/'+id,
+				headers:{
+					'token': token
+				},
+				params:{
+					'id': id,
+					'status': 1,
+				}
+			})
+			.success(function(data,status,headers,config){
+				$state.go($state.current, {}, {reload: true});
+			})
+			.error(function(data,status,headers,config){
+			});
+		};
+
+		$scope.asDelivered=function(id){
+			token = localStorageService.get('token');
+			$http({
+				method: 'PUT',
+				url: BASE_URL+'/package/'+id,
+				headers:{
+					'token': token
+				},
+				params:{
+					'id': id,
+					'status': 2,
+				}
+			})
+			.success(function(data,status,headers,config){
+				$state.go($state.current, {}, {reload: true});
+			})
+			.error(function(data,status,headers,config){
 			});
 		};
 
