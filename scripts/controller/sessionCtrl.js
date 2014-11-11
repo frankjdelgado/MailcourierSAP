@@ -17,6 +17,7 @@ angular
 			.success(function(data,status,headers,config){
 				if(localStorageService.isSupported){
 
+					localStorageService.set('id', data.id);
 					localStorageService.set('token', data.token);
 					localStorageService.set('username', data.username);
 					localStorageService.set('role', data.role);
@@ -24,7 +25,7 @@ angular
 					$location.path("/");
 					
 					localStorageService.set('notice', 'Welcome! You have successfully sign in.');
-
+					console.log(data);
 
 				}else{
 					alert("Your browser does not support localStorage");
@@ -49,6 +50,7 @@ angular
 			.success(function(data,status,headers,config){
 				if(localStorageService.isSupported){
 
+					localStorageService.set('id', data.id);
 					localStorageService.set('token', data.token);
 					localStorageService.set('username', data.username);
 					localStorageService.set('role', data.role);
@@ -66,6 +68,7 @@ angular
 
 		// User logout. Destroy localStroage and redirect to home
 		$scope.logout = function() {
+			localStorageService.remove("id");
 			localStorageService.remove("token");
 			localStorageService.remove("username");
 			localStorageService.remove("role");

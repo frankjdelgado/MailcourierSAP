@@ -65,12 +65,11 @@ angular
 				}
 			})
 			.success(function(data,status,headers,config){
-				// Go to corrent url, reset parameters, reload page
 				$state.go($state.current, {}, {reload: true});
-				localStorageService.set('notice','The user has been created successfully');
+				console.log(data);
 			})
 			.error(function(data,status,headers,config){
-				localStorageService.set('alert','Error creating the user');
+				console.log(data);
 			});
 		};
 
@@ -94,10 +93,8 @@ angular
 			.success(function(data,status,headers,config){
 				// Go to corrent url, reset parameters, reload page
 				$state.go($state.current, {}, {reload: true});
-				localStorageService.set('notice','The user has been created successfully');
 			})
 			.error(function(data,status,headers,config){
-				localStorageService.set('alert','Error creating the user');
 			});
 		};
 
