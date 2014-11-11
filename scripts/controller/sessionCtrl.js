@@ -24,7 +24,6 @@ angular
 
 					$location.path("/");
 					
-					localStorageService.set('notice', 'Welcome! You have successfully sign in.');
 					console.log(data);
 
 				}else{

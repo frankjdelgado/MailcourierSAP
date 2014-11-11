@@ -19,7 +19,6 @@ angular
 				}
 			})
 			.success(function(data,status,headers,config){
-				localStorageService.set('notice','The rate has been created successfully');
 			})
 			.error(function(data,status,headers,config){
 				console.log(data);
@@ -39,7 +38,6 @@ angular
 				}
 			})
 			.success(function(data,status,headers,config){
-				localStorageService.set('notice','The status of the rate was updated successfully');
 			})
 			.error(function(data,status,headers,config){
 				console.log(data);

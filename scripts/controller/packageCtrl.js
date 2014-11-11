@@ -126,10 +126,8 @@ angular
 			.success(function(data,status,headers,config){
 				// Go to corrent url, reset parameters, reload page
 				$state.go($state.current, {}, {reload: true});
-				localStorageService.set('notice','New package added successfully');
 			})
 			.error(function(data,status,headers,config){
-				localStorageService.set('alert','There was and error creating the package. Please, try again.');
 			});
 		};
 
@@ -147,7 +145,6 @@ angular
 				}
 			})
 			.success(function(data,status,headers,config){
-				localStorageService.set('notice','The status of the package was updated successfully');
 			})
 			.error(function(data,status,headers,config){
 				console.log(data);
