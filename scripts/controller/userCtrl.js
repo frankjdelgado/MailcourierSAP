@@ -51,6 +51,29 @@ angular
 			});
 		};
 
+		$scope.changePassword2 = function(){
+			token = localStorageService.get('token');
+			$http({
+				method: 'PUT',
+				url: BASE_URL+'/user/'+localStorageService.get('id'),
+				headers:{
+					'token': token
+				},
+				params:{
+					'password': $scope.user.password,
+					'password_confirmation': $scope.user.password_confirmation,
+				}
+			})
+			.success(function(data,status,headers,config){
+				// Go to corrent url, reset parameters, reload page
+				$state.go($state.current, {}, {reload: true});
+				localStorageService.set('notice','The user has been created successfully');
+			})
+			.error(function(data,status,headers,config){
+				localStorageService.set('alert','Error creating the user');
+			});
+		};
+
 		$scope.newUser = function(){
 			token = localStorageService.get('token');
 			$http({

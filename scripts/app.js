@@ -45,7 +45,13 @@ app.config(['$urlRouterProvider','$stateProvider','$locationProvider',function($
 			url: '/rates',
 			controler: 'rateCtrl',
 			templateUrl: 'templates/rates/index.html'
-		});
+		})
+		.state('newPwd', {
+			url: '/user/password',
+			controler: 'userCtrl',
+			templateUrl: 'templates/users/password.html'
+		})
+		;
 
 	// Get rid of /#/ on routes
 	// $locationProvider.html5Mode(true);
