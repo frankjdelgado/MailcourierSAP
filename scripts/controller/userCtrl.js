@@ -69,7 +69,8 @@ angular
 				}
 			})
 			.success(function(data,status,headers,config){
-				$state.go($state.current, {}, {reload: true}); 
+				// Go to corrent url, reset parameters, reload page
+				$state.go($state.current, {}, {reload: true});
 				localStorageService.set('notice','The user has been created successfully');
 			})
 			.error(function(data,status,headers,config){

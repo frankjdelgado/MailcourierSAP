@@ -7,7 +7,7 @@
 			</ul>
 		</div>
 		<div class="col-xs-12 col-md-8">
-			<form role="form" class="form-horizontal">
+			<form role="form" class="form-horizontal" ng-controller="packageCtrl">
 				<div class="form-group">
 					<label for="description" class="col-sm-2 control-label text-capitalize">Description</label>
 					<div class="col-xs-12 col-md-8">
@@ -67,11 +67,11 @@
 				</div>
 				<div class="form-group">
 					<label for="shipping_cost" class="col-sm-2 control-label text-capitalize">shipping_cost</label>
-					<div class="col-xs-12 col-md-8">
+					<div class="col-xs-12 col-md-8" ng-controller="homeCtrl">
 						<div class="input-group">
-							<input type="text" name="shipping_cost" class="form-control" required autocomplete="off" ng-model="package.shipping_cost">
+							<input value="{{shipping_cost}}" type="text" name="shipping_cost" class="form-control" required autocomplete="off" ng-model="package.shipping_cost">
 					        <div class="input-group-btn">
-					            <button class="btn btn-green text-capitalize" type="button">calculate</button>
+					            <button class="btn btn-green text-capitalize" type="button" ng-click="calculate()">calculate</button>
 					        </div>
 					    </div>
 					</div>
@@ -80,7 +80,7 @@
 				<div class="form-group text-right">
 					<div class="col-xs-12">
 						<br>
-						<button class="no-radius btn btn-green text-capitalize" type="button">Add Package</button>
+						<button class="no-radius btn btn-green text-capitalize" type="button" ng-click="addPackage()">Add Package</button>
 					</div>
 				</div>
 			</form>

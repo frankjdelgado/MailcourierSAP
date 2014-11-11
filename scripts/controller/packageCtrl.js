@@ -1,6 +1,6 @@
 angular
 	.module('mcapp')
-	.controller('packageCtrl', ['$scope','$http', 'localStorageService', function($scope,$http,localStorageService){
+	.controller('packageCtrl', ['$scope','$state','$http', 'localStorageService', function($scope,$state,$http,localStorageService){
 		
 		var BASE_URL = "http://0.0.0.0:3000/api/v1";
 		var token;
@@ -62,7 +62,7 @@ angular
 			}
 		};
 
-		$scope.createPackage=function(){
+		$scope.addPackage = function(){
 			token = localStorageService.get('token');
 			$http({
 				method: 'POST',
@@ -76,17 +76,19 @@ angular
 					'width': $scope.package.width,
 					'depth': $scope.package.depth,
 					'value': $scope.package.value,
-					'agency_id': $scope.package.agency_id,
-					'sender_id': $scope.package.sender_id,
-					'receiver_id': $scope.package.receiver_id,
+					'agency_id': ($scope.package.agency_id).id,
+					'sender': $scope.package.sender,
+					'receiver': $scope.package.receiver,
 					'description': $scope.package.description
 				}
 			})
 			.success(function(data,status,headers,config){
-				localStorageService.set('notice','The package has been created successfully');
+				// Go to corrent url, reset parameters, reload page
+				$state.go($state.current, {}, {reload: true});
+				localStorageService.set('notice','New package added successfully');
 			})
 			.error(function(data,status,headers,config){
-				console.log(data);
+				localStorageService.set('alert','There was and error creating the package. Please, try again.');
 			});
 		};
 
