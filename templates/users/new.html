@@ -1,0 +1,40 @@
+<div class="container" ng-controller="userCtrl">
+	<div class="row">
+		<div class="col-xs-12 col-md-6 col-md-offset-3">	
+			<form action="" class="form-mail">
+				<h1>Add new Operator</h1>
+				<br>
+				<div class="form-group">
+					<label for="email" class="text-uppercase">email</label>
+					<input required autofocus="true" type="email" class="form-control input-lg" ng-model="user.email">
+				</div>
+
+				<div class="form-group">
+					<label for="username" class="text-uppercase">username</label>
+					<input required type="text" class="form-control input-lg" ng-model="user.username">
+				</div>
+
+				<div class="form-group">
+					<label for="agency" class="text-uppercase">Reception Center<span title="designated agency for operator" class="glyphicon glyphicon-info-sign"></span></label>
+					<select required name="agency" class="form-control input-lg" ng-model="user.agency_id" ng-options="agency.location for agency in agencies track by agency.id">
+						<option value="" disabled selected>Select a location</option>
+					</select>				
+				</div>
+				<div class="form-group">
+					<label for="password" class="text-uppercase">Password <i>(8 charecters minimum)</i></label>
+					<input autocomplete="off" required type="password" class="form-control input-lg" name="password" ng-model="user.password">
+				</div>
+
+			  	<div class="form-group">
+			  		<label for="password_confirmation" class="text-uppercase">Password Confirmation</label>
+					<input autocomplete="off" required type="password" class="form-control input-lg" name="password_confirmation" ng-model="user.password_confirmation">
+				</div>
+
+			  	<div class="form-group">
+			  		<a href="" class="no-radius btn btn-green btn-block btn-lg text-uppercase" ng-click="newUser()">Add Operator</a>
+			  	</div>
+			</form>
+		</div>
+	</div>
+</div>
+
