@@ -36,10 +36,10 @@ app.config(['$urlRouterProvider','$stateProvider','$locationProvider',function($
 			controler: 'packageCtrl',
 			templateUrl: 'templates/packages/new.html'
 		})
-		.state('users', {
-			url: '/users',
+		.state('newUser', {
+			url: '/users/new',
 			controler: 'userCtrl',
-			templateUrl: 'templates/users/index.html'
+			templateUrl: 'templates/users/new.html'
 		})
 		.state('rates', {
 			url: '/rates',
@@ -74,12 +74,12 @@ app.run(['$rootScope','localStorageService','$location', function($rootScope, lo
 
 	// Check if user is admin
 	$rootScope.isAdmin = function(){
-		return (localStorageService.get('role') === '2')? true : false;
+		return (localStorageService.get('role') === 2)? true : false;
 	};
 
 	// Check if user is operator
 	$rootScope.isOperator = function(){
-		return (localStorageService.get('role') === '1')? true : false;
+		return (localStorageService.get('role') === 1)? true : false;
 	};
 
 	// Check if user is member
